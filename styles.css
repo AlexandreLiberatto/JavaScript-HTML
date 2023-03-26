@@ -31,3 +31,11 @@ img.moeda0-10 {
 .alinha-direita {
     text-align: right;
 }
+body {
+    background-color: grey;
+}
+img {
+    border: 2px black solid; /*largura, cor, estilo*/
+    border-radius: 50%; /*arredonda as bordas*/
+    box-shadow: 0px 5px 10px 0px rgb(17, 17, 17); /*sombra*/
+}
