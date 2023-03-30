@@ -25,3 +25,14 @@ const inseriLinha = (titulo, genero) => {
     col2.innerText = genero
     col3.innerHTML = "<i class=`exclui` title=`Excluir`>&#10008</i>"
 }
+
+const gravarFilme = (titulo, genero) => {
+    // Se ouver dados salvos em localStorage
+    if (localStorage.getItem("filmesTitulo")) {
+        //...Obtém od dados e acrescenta ";" e o titulo/genero informado
+        const filmesTitulo = localStorage.getItem("filmesTitulo") + ";" + titulo
+        const filmesGenero = localStorage.getItem("filmesGenero") + ";" + genero
+        localStorage.setItem("filmesTitulo", filmesTitulo) // Grava os dados
+        localStorage.setItem("filmesGenero", filmesGenero)
+    }
+}
