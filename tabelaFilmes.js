@@ -1,7 +1,7 @@
 const frm = document.querySelector("form"); // Obtém os elementos da página
 const tbFilmes = document.querySelector("table");
 
-frm.addEventListener("subit", (e) => {
+frm.addEventListener("submit", (e) => {
   // Cria um ouvinte de evento para o botão submit
   e.preventDefault(); // Evita o envio do form
 
