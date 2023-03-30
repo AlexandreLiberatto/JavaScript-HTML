@@ -36,3 +36,17 @@ const gravarFilme = (titulo, genero) => {
         localStorage.setItem("filmesGenero", filmesGenero)
     }
 }
+
+window.addEventListener("load", () => {  // Ao carregar a página
+  // Se ouver dados no localStorage
+  if (localStorage.getItem("filmesTitulo")) {
+    // Obtém conteúdo e converte em elementos de vetor (na ocorrencia ";")
+    const titulos = localStorage.getItem("filmesTitulo").split(";")
+    const generos = localStorage.getItem("filmesGenero").split(";")
+
+    // Percorre os elementos do vetor e os insere na tabela
+    for (let i = 0; i < titulos.length; i++) {
+        inseriLinha(titulos[i], generos[i])
+    }
+  }
+})
