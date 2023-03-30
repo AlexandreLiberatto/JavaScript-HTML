@@ -50,3 +50,27 @@ window.addEventListener("load", () => {  // Ao carregar a página
     }
   }
 })
+
+tbFilmes.addEventListener("click", (e) => {
+    //Se a class do elemento alvo clicado contém exclui 
+    if (e.target.classList.contains("exclui")) {
+        //Acessa o pai do pai do elemento alvo, e obtém o texto do 1º filho
+        const titulo = e.target.parentElement.parentElement.children[0].innerText
+
+        if (confirm(`Confirma o exclusão do filme "${titulo}"?`)) {
+            // Remove a linha da tabela, correspondente ao símbolo de excluir clicado
+            e.target.parentElement.parentElement.remove()
+
+            localStorage.removeItem("filmesTitulo")  // Exclui filmes salvos 
+            localStorage.removeItem("filmesGenero")
+
+            //Salva novamante "se existir", acessando o conteudo da tabela
+            for (let i = 1; i < tbFilmes.rows.length; i ++) {
+                //Obtém o conteudo da tabela (coluna 0: título; coluna 1: gênero)
+                const auxTitulo = tbFilmes.rows[i].cells[0].innerText
+                const auxGenero = tbFilmes.rows[i].cells[1].innerText
+                gravarFilme(auxTitulo, auxGenero)  // chama gravarFilmes com dados da tabela
+            }
+        }
+    }
+})
