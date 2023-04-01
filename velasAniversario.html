@@ -4,20 +4,35 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/livrojs.png">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
     <title>Velas de Aniversário</title>
 </head>
 <body>
- <div>  
- <h1>Velas de Aniversário</h1> 
- <form>
-  <p>Idade: 
-  <input type="number" id="inIdade" min="0" max="120" required autofocus>
-  </p> 
-  <input type="submit" value="Exibir Velas">
-  <input type="reset" value="Novas Velas"> 
- </form> 
- <pre></pre>
- </div> 
+    <div class="container-fluid">
+        <div class="row">
+          <div class="col-sm-4">
+            <img src="img/exerc.jpg" alt="Exercícios" class="img-fluid">
+          </div>
+    
+          <div class="col-sm-8" id="divIdade">
+            <h1>Velas de Aniversário</h1>
+    
+            <form>
+              <p>
+                <label for="inIdade">Idade: </label>
+                <input type="number" id="inIdade" min="1" max="120" class="form-control" required autofocus>
+              </p>
+    
+              <p>
+                <input type="submit" value="Exibir Velas" class="btn btn-primary">
+                <input type="reset" value="Novas Velas" class="btn btn-danger">
+              </p>
+            </form>
+          </div>
+        </div>
+      </div>
  <script src="velasAniversario.js"></script>
 </body>
 </html>
